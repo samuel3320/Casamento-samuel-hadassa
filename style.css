@@ -268,7 +268,7 @@ body {
   line-height: 1;
   color: var(--text);
   margin-bottom: 28px;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -278,7 +278,7 @@ body {
 
 .hero-title .hero-name {
   white-space: nowrap;
-  display: inline-block;
+  display: block;
 }
 
 .hero-title .amp {
