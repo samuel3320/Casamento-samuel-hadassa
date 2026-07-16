@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
 });
 
 // ── COUNTDOWN ───────────────────────────────────
+const prevVals = {};
 function updateCountdown() {
   const target = new Date('2028-01-22T15:00:00').getTime();
   const now    = Date.now();
@@ -34,7 +35,18 @@ function updateCountdown() {
   const s = Math.floor((diff % 60000)    / 1000);
 
   const fmt = (n, pad) => String(n).padStart(pad, '0');
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  // Rolling animation: triggers when the displayed value changes
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (prevVals[id] !== val) {
+      el.classList.remove('rolling');
+      void el.offsetWidth; // force reflow to restart animation
+      el.textContent = val;
+      el.classList.add('rolling');
+      prevVals[id] = val;
+    }
+  };
 
   set('days',    fmt(d, 3));
   set('hours',   fmt(h, 2));
@@ -154,4 +166,95 @@ window.copiarPix = function() {
 document.addEventListener('click', e => {
   const modal = document.getElementById('modalGift');
   if (modal && e.target === modal) fecharModal();
+});
+
+// ── PARALLAX — Hero background on mouse move ─────────────────────
+const heroSec = document.querySelector('.hero');
+const heroBg  = document.querySelector('.hero-bg');
+if (heroSec && heroBg && window.matchMedia('(pointer: fine)').matches) {
+  heroSec.addEventListener('mousemove', e => {
+    const r  = heroSec.getBoundingClientRect();
+    const cx = (e.clientX - r.left) / r.width  - 0.5; // -0.5 → 0.5
+    const cy = (e.clientY - r.top)  / r.height - 0.5;
+    heroBg.style.transform = `translate(${cx * 22}px, ${cy * 12}px) scale(1.04)`;
+  });
+  heroSec.addEventListener('mouseleave', () => {
+    heroBg.style.transform = '';
+  });
+}
+
+// ── MUSIC BUTTON ───────────────────────────────────────────────
+const musicBtn  = document.getElementById('musicBtn');
+const bgMusic   = document.getElementById('bgMusic');
+if (musicBtn && bgMusic) {
+  let isPlaying = false;
+  const iconOff = `<svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>`;
+  const iconOn  = `<div class="music-wave"><span></span><span></span><span></span></div>`;
+
+  musicBtn.addEventListener('click', async () => {
+    try {
+      if (!isPlaying) {
+        await bgMusic.play();
+        isPlaying = true;
+        musicBtn.classList.add('playing');
+        musicBtn.innerHTML = iconOn;
+        musicBtn.setAttribute('title', 'Pausar música');
+      } else {
+        bgMusic.pause();
+        isPlaying = false;
+        musicBtn.classList.remove('playing');
+        musicBtn.innerHTML = iconOff;
+        musicBtn.setAttribute('title', 'Tocar música ambiente');
+      }
+    } catch (err) {
+      // Audio file not found — add assets/musica.mp3 to enable
+      console.info('Música: adicione "assets/musica.mp3" para ativar o botão de música.');
+    }
+  });
+}
+
+// ── GALLERY LIGHTBOX ──────────────────────────────────────────
+const lightbox      = document.getElementById('lightbox');
+const lbContent     = document.getElementById('lightboxContent');
+const lbClose       = document.getElementById('lightboxClose');
+const lbPrev        = document.getElementById('lightboxPrev');
+const lbNext        = document.getElementById('lightboxNext');
+const galleryItems  = [...document.querySelectorAll('.gallery-item')];
+let currentLbIdx    = 0;
+
+function openLightbox(idx) {
+  if (!lightbox || !lbContent || galleryItems.length === 0) return;
+  currentLbIdx = idx;
+  const item   = galleryItems[idx];
+  const img    = item ? item.querySelector('img') : null;
+  if (img) {
+    lbContent.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+  } else {
+    const label = item ? (item.dataset.index !== undefined ? `Foto ${Number(item.dataset.index) + 1}` : 'Foto') : 'Foto';
+    lbContent.innerHTML = `
+      <div class="lb-placeholder">
+        <span>📸</span>
+        <p>${label} — substitua o placeholder pelo caminho da sua foto</p>
+      </div>`;
+  }
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+galleryItems.forEach((item, idx) => item.addEventListener('click', () => openLightbox(idx)));
+if (lbClose)   lbClose.addEventListener('click', closeLightbox);
+if (lbPrev)    lbPrev.addEventListener('click', () => openLightbox((currentLbIdx - 1 + galleryItems.length) % galleryItems.length));
+if (lbNext)    lbNext.addEventListener('click', () => openLightbox((currentLbIdx + 1) % galleryItems.length));
+if (lightbox)  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox || !lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'ArrowLeft'  && lbPrev) lbPrev.click();
+  if (e.key === 'ArrowRight' && lbNext) lbNext.click();
 });

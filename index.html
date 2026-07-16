@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuel Filho & Hadassa Gabrielle · 22.01.2028</title>
-  <meta name="description" content="Casamento de Samuel Filho e Hadassa Gabrielle — 22 de Janeiro de 2028">
+  <title>Samuel Filho & Hadassa Vasconcelos · 22.01.2028</title>
+  <meta name="description" content="Casamento de Samuel Filho e Hadassa Vasconcelos — 22 de Janeiro de 2028">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph: aparece quando o link é compartilhado no WhatsApp / redes sociais -->
+  <meta property="og:title" content="Samuel &amp; Hadassa · 22.01.2028 💍">
+  <meta property="og:description" content="Você está convidado para o nosso casamento! 22 de Janeiro de 2028 · No Jardiim, Gravatá — PE">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/casal-aquarela.png">
+  <meta name="theme-color" content="#c9849e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
 
   <!-- LOADER -->
   <div id="loader">
@@ -19,6 +29,16 @@
       <div class="loader-monogram">S <span>&</span> H</div>
     </div>
   </div>
+
+  <!-- MÚSICA DE FUNDO
+       Para ativar: coloque seu arquivo de música em assets/musica.mp3
+       O botão aparece no canto inferior esquerdo da tela -->
+  <button id="musicBtn" aria-label="Tocar música de fundo" title="Música ambiente">
+    <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+  </button>
+  <audio id="bgMusic" loop>
+    <source src="assets/musica.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -56,7 +76,7 @@
       <h1 class="hero-title reveal-delay-1">
         <span class="hero-name">Samuel Filho</span>
         <span class="amp">&</span>
-        <span class="hero-name">Hadassa Gabrielle</span>
+        <span class="hero-name">Hadassa Vasconcelos</span>
       </h1>
       <div class="hero-divider reveal-delay-2">
         <span></span><svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg><span></span>
@@ -114,6 +134,73 @@
       </p>
     </div>
   </section>
+
+  <!-- NOSSA HISTÓRIA ─ Linha do Tempo -->
+  <section class="history-section" id="historia">
+    <div class="container">
+      <div class="section-label reveal">Nossa Jornada</div>
+      <h2 class="section-title reveal">Nossa História</h2>
+      <div class="timeline-v">
+
+        <!-- MARCO 1 -->
+        <div class="tl-item reveal">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
+          <div class="tl-content">
+            <div class="tl-date">24 de Janeiro · 2021</div>
+            <h3>Nos Conhecemos</h3>
+            <p>O destino nos colocou no mesmo caminho e tudo começou com um simples encontro cheio de significado.</p>
+            <img src="assets/historia/encontro.jpg" alt="Quando nos conhecemos">
+          </div>
+        </div>
+
+        <!-- MARCO 2 -->
+        <div class="tl-item reveal">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
+          <div class="tl-content">
+            <div class="tl-date">09 de Setembro · 2024</div>
+            <h3>Início do Namoro</h3>
+            <p>Após cultivarmos uma bela amizade, nossos corações disseram sim. Oficialmente juntos e apaixonados!</p>
+            <img src="assets/historia/namoro.jpeg" alt="Início do namoro">
+          </div>
+        </div>
+
+        <!-- MARCO 3 — PLACEHOLDER (edite quando chegar a hora) -->
+        <div class="tl-item reveal">
+          <div class="tl-dot tl-dot--star">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="tl-content">
+            <div class="tl-date">Em breve... ✨</div>
+            <h3>Noivado 💍</h3>
+            <p>Este capítulo especial ainda está sendo escrito pelo Autor da nossa história...</p>
+            <!-- 📸 FOTO: Quando acontecer, adicione: <img src="assets/historia/noivado.jpg" alt="Noivado"> -->
+            <div class="tl-photo-placeholder tl-photo-placeholder--glow">💍 Em breve...</div>
+          </div>
+        </div>
+
+        <!-- MARCO 4 -->
+        <div class="tl-item reveal">
+          <div class="tl-dot tl-dot--wedding">
+            <svg viewBox="0 0 24 24"><path d="M9 2h6v2H9zm3 16c-2.2 0-4-1.8-4-4V8h8v6c0 2.2-1.8 4-4 4zm4-16h1c1.1 0 2 .9 2 2v1h-3V2zM7 2H6C4.9 2 4 2.9 4 4v1h3V2zm9 6H8v6c0 2.2 1.8 4 4 4s4-1.8 4-4V8z"/></svg>
+          </div>
+          <div class="tl-content">
+            <div class="tl-date">22 de Janeiro · 2028</div>
+            <h3>O Grande Dia 💒</h3>
+            <p>O dia em que diremos "sim" diante de Deus e das pessoas que mais amamos. Celebre conosco!</p>
+            <!-- 📸 FOTO: Após o casamento, adicione: <img src="assets/historia/casamento.jpg" alt="Casamento"> -->
+            <div class="tl-photo-placeholder tl-photo-placeholder--wedding">🎊 Mal podemos esperar!</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ 
 
   <!-- CARDS -->
   <section class="cards-section">
@@ -174,7 +261,7 @@
     <div class="container">
       <p class="footer-love">Com todo o nosso amor,</p>
       <h2 class="footer-names">
-        Samuel Filho <span>&</span> Hadassa Gabrielle
+        Samuel Filho <span>&</span> Hadassa Vasconcelos
       </h2>
       <p class="footer-date">22 de Janeiro de 2028</p>
     </div>
