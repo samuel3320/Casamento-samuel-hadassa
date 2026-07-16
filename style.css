@@ -297,8 +297,6 @@ body {
     text-align: center;
   }
 }
-  margin: 0;
-}
 
 .hero-divider {
   display: flex;
@@ -844,11 +842,14 @@ body {
   .count-item { padding:16px 18px; min-width:72px; }
   .count-item span { font-size:28px; }
   .count-sep { padding:0 4px; font-size:22px; }
+  .hero-title { font-size: clamp(48px, 8vw, 75px); }
 }
 @media(max-width:600px){
   .countdown { gap:0; }
   .count-item { padding:12px 12px; min-width:60px; }
   .hero-photo { width:200px; height:200px; }
+  .hero-title { font-size: clamp(34px, 9vw, 48px); }
+  .hero-title .hero-name { white-space: normal; }
 }
 
 body, button, a, input, textarea, select {

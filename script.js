@@ -213,48 +213,4 @@ if (musicBtn && bgMusic) {
   });
 }
 
-// ── GALLERY LIGHTBOX ──────────────────────────────────────────
-const lightbox      = document.getElementById('lightbox');
-const lbContent     = document.getElementById('lightboxContent');
-const lbClose       = document.getElementById('lightboxClose');
-const lbPrev        = document.getElementById('lightboxPrev');
-const lbNext        = document.getElementById('lightboxNext');
-const galleryItems  = [...document.querySelectorAll('.gallery-item')];
-let currentLbIdx    = 0;
 
-function openLightbox(idx) {
-  if (!lightbox || !lbContent || galleryItems.length === 0) return;
-  currentLbIdx = idx;
-  const item   = galleryItems[idx];
-  const img    = item ? item.querySelector('img') : null;
-  if (img) {
-    lbContent.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
-  } else {
-    const label = item ? (item.dataset.index !== undefined ? `Foto ${Number(item.dataset.index) + 1}` : 'Foto') : 'Foto';
-    lbContent.innerHTML = `
-      <div class="lb-placeholder">
-        <span>📸</span>
-        <p>${label} — substitua o placeholder pelo caminho da sua foto</p>
-      </div>`;
-  }
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  if (!lightbox) return;
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-galleryItems.forEach((item, idx) => item.addEventListener('click', () => openLightbox(idx)));
-if (lbClose)   lbClose.addEventListener('click', closeLightbox);
-if (lbPrev)    lbPrev.addEventListener('click', () => openLightbox((currentLbIdx - 1 + galleryItems.length) % galleryItems.length));
-if (lbNext)    lbNext.addEventListener('click', () => openLightbox((currentLbIdx + 1) % galleryItems.length));
-if (lightbox)  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => {
-  if (!lightbox || !lightbox.classList.contains('open')) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowLeft'  && lbPrev) lbPrev.click();
-  if (e.key === 'ArrowRight' && lbNext) lbNext.click();
-});
