@@ -843,6 +843,7 @@ body {
   .count-item span { font-size:28px; }
   .count-sep { padding:0 4px; font-size:22px; }
   .hero-title { font-size: clamp(48px, 8vw, 75px); }
+  .hero-title .hero-name { white-space: normal; }
 }
 @media(max-width:600px){
   .countdown { gap:0; }
