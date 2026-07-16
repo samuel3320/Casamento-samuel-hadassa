@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Presentes · Samuel & Hadassa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S <span>&</span> H</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="local.html">Local</a></li>
+        <li><a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="nav-cta">Confirmar Presença</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Início</a>
+    <a href="local.html">Local</a>
+    <a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="mobile-cta">Confirmar Presença</a>
+  </div>
+
+  <header class="hero-small">
+    <div class="container">
+      <div class="section-label">Com carinho</div>
+      <h1>Lista de Presentes</h1>
+      <p>Cada presente representa um gesto de amor. Obrigado por fazer parte da nossa história.</p>
+    </div>
+  </header>
+
+  <section class="gift-section">
+    <div class="container">
+      <div class="gift-grid">
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/jogo-jantar.jpg" alt="Jogo de Jantar">
+          <h2>Jogo de Jantar</h2>
+          <h3>R$ 250,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Jogo de Jantar','R$ 250,00','assets/qrcodes/jogo-jantar.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/cafeteira.jpg" alt="Cafeteira">
+          <h2>Cafeteira</h2>
+          <h3>R$ 320,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Cafeteira','R$ 320,00','assets/qrcodes/cafeteira.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/microondas.jpg" alt="Micro-ondas">
+          <h2>Micro-ondas</h2>
+          <h3>R$ 550,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Micro-ondas','R$ 550,00','assets/qrcodes/microondas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/barbie.png" alt="Barbie">
+          <h2>Barbie</h2>
+          <h3>R$ 700,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Barbie','R$ 700,00','assets/qrcodes/barbieqr.png','00020126460014br.gov.bcb.pix0114+55839913100700206Barbie5204000053039865406700.005802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr2459703345609756304D675')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/livre.png" alt="livre">
+          <h2>Presenteie o quanto puder ❤️😊</h2>
+          <h3>R$ 00,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Presenteie o quanto puder ❤️😊','R$ 00,00','assets/qrcodes/livreqr.png','00020126640014br.gov.bcb.pix0114+55839913100700224Presenteie quando puder 5204000053039865802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr24597033407769063047033')">
+            Presentear
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modalGift">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">×</span>
+      <h2 id="giftName"></h2>
+      <h3 id="giftValue"></h3>
+      <img id="giftQR" alt="QR Code Pix">
+      <textarea id="pixCode" readonly></textarea>
+      <button class="gift-btn" onclick="copiarPix()">Copiar Código Pix</button>
+    </div>
+  </div>
+
+  <div class="back-home"><a href="index.html">← Voltar para o Início</a></div>
+
+  <button id="topButton" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Filho & Hadassa Gabrielle · 22.01.2028</title>
+  <meta name="description" content="Casamento de Samuel Filho e Hadassa Gabrielle — 22 de Janeiro de 2028">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <svg class="loader-ring" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34"/></svg>
+      <div class="loader-monogram">S <span>&</span> H</div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">S <span>&</span> H</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#nossa-historia">Nossa História</a></li>
+        <li><a href="local.html">Local</a></li>
+        <li><a href="presentes.html">Presentes</a></li>
+        <li><a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="nav-cta">Confirmar Presença</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" onclick="closeMobile()">Início</a>
+    <a href="#nossa-historia" onclick="closeMobile()">Nossa História</a>
+    <a href="local.html">Local</a>
+    <a href="presentes.html">Presentes</a>
+    <a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="mobile-cta">Confirmar Presença</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <div class="hero-petals" id="petals"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">22 · Janeiro · 2028</p>
+      <h1 class="hero-title reveal-delay-1">
+        <span class="hero-name">Samuel Filho</span>
+        <span class="amp">&</span>
+        <span class="hero-name">Hadassa Gabrielle</span>
+      </h1>
+      <div class="hero-divider reveal-delay-2">
+        <span></span><svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg><span></span>
+      </div>
+      <p class="hero-verse reveal-delay-3">
+        "O amor tudo sofre, tudo crê, tudo espera, tudo suporta."
+      </p>
+      <p class="hero-ref reveal-delay-3">1 Coríntios 13:7</p>
+
+      <div class="hero-photo reveal-delay-2">
+        <div class="photo-frame">
+          <img src="assets/casal-aquarela.png" alt="Samuel e Hadassa">
+        </div>
+        <div class="photo-ring photo-ring-1"></div>
+        <div class="photo-ring photo-ring-2"></div>
+      </div>
+
+      <div class="countdown reveal-delay-4">
+        <div class="count-item">
+          <span id="days">000</span>
+          <small>Dias</small>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </div>
+        <div class="count-sep">:</div>
+        <div class="count-item">
+          <span id="seconds">00</span>
+          <small>Segundos</small>
+        </div>
+      </div>
+
+      <a href="#nossa-historia" class="scroll-hint" aria-label="Rolar para baixo">
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BOAS VINDAS -->
+  <section class="welcome" id="nossa-historia">
+    <div class="container">
+      <div class="section-label reveal">Bem-vindos</div>
+      <h2 class="section-title reveal">Sejam muito bem-vindos!</h2>
+      <p class="section-text reveal">
+        É uma alegria compartilhar esse momento tão especial com você.<br>
+        Criamos este espaço para reunir todas as informações do nosso grande dia.<br>
+        Esperamos que aproveite cada momento conosco.
+      </p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards-section">
+    <div class="container">
+      <div class="cards-grid">
+
+        <a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="glass-card reveal">
+          <div class="glass-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6zm0 8c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z"/></svg>
+          </div>
+          <h3>Confirmar Presença</h3>
+          <p>Sua presença tornará esse dia ainda mais especial para nós.</p>
+          <div class="glass-card-arrow">→</div>
+        </a>
+
+        <a href="presentes.html" class="glass-card reveal">
+          <div class="glass-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.533 15.467 0 12.727 0c-1.364 0-2.636.545-3.636 1.455L12 4.364l2.909-2.909c.636-.636 1.545-1 2.455-.909 1.727.182 3 1.636 2.818 3.455-.09.909-.546 1.636-1.182 2H10.2C9.6 5.2 9 4.8 8.4 4.2L7.2 3.6C6.8 2.8 6 2 5.091 2 3.364 2 2 3.364 2 5.091c0 .636.182 1.182.545 1.636C1.636 7.273 1 8.182 1 9.273V18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V9.273c0-1.6-1.273-3.09-3-3.273zM5.091 4c.636 0 1.09.455 1.09 1.09S5.727 6.18 5.09 6.18 4 5.727 4 5.09 4.455 4 5.09 4zM11 18H3v-8h8v8zm10 0h-8v-8h8v8z"/></svg>
+          </div>
+          <h3>Lista de Presentes</h3>
+          <p>Escolha com carinho um presente para nossa nova casa.</p>
+          <div class="glass-card-arrow">→</div>
+        </a>
+
+        <a href="local.html" class="glass-card reveal">
+          <div class="glass-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3>Local do Casamento</h3>
+          <p>Veja o endereço, mapa e cronograma do grande dia.</p>
+          <div class="glass-card-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MENSAGEM FINAL -->
+  <section class="message-section">
+    <div class="container">
+      <div class="message-inner reveal">
+        <div class="section-label">Uma nova história</div>
+        <h2 class="section-title">Uma nova história começa...</h2>
+        <p class="section-text">
+          O amor nos uniu e Deus preparou esse momento com muito carinho.<br>
+          Será uma enorme felicidade celebrar esse dia ao lado das pessoas que amamos.<br>
+          Sua presença tornará nossa alegria ainda mais completa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-ornament">
+      <svg viewBox="0 0 200 40" preserveAspectRatio="none"><path d="M0 20 Q50 0 100 20 Q150 40 200 20" stroke="currentColor" fill="none" stroke-width="1"/></svg>
+    </div>
+    <div class="container">
+      <p class="footer-love">Com todo o nosso amor,</p>
+      <h2 class="footer-names">
+        Samuel Filho <span>&</span> Hadassa Gabrielle
+      </h2>
+      <p class="footer-date">22 de Janeiro de 2028</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="topButton" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

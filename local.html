@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local do Casamento · Samuel & Hadassa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S <span>&</span> H</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="presentes.html">Presentes</a></li>
+        <li><a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="nav-cta">Confirmar Presença</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Início</a>
+    <a href="presentes.html">Presentes</a>
+    <a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="mobile-cta">Confirmar Presença</a>
+  </div>
+
+  <header class="hero-small">
+    <div class="container">
+      <div class="section-label">22 · Janeiro · 2028</div>
+      <h1>Local do Casamento</h1>
+      <p>Será uma alegria celebrar esse momento ao seu lado. Esperamos por você!</p>
+    </div>
+  </header>
+
+  <section class="location-section">
+    <div class="container">
+      <div class="location-card reveal">
+        <img src="assets/local/local.webp" alt="No Jardiim Restaurante">
+        <div class="location-info">
+          <h2>No Jardiim </h2>
+          <p>Rua Pafisa<br>Novo Gravatá, Gravatá — PE<br>55645-140</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="t-icon">💒</div>
+              <div>
+                <h3>Cerimônia</h3>
+                <p>15:00 h</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="t-icon">🥂</div>
+              <div>
+                <h3>Recepção</h3>
+                <p>16:00 h</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="t-icon">🍰</div>
+              <div>
+                <h3>Jantar</h3>
+                <p>16:30 h</p>
+              </div>
+            </div>
+          </div>
+          <a class="maps-button"
+             href="https://www.google.com/maps/place/No+Jardiim+-+Restaurante/data=!4m2!3m1!1s0x0:0xb7ebdcb6fab799a4?sa=X&ved=1t:2428&ictx=111"
+             target="_blank">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Abrir no Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tips-section">
+    <div class="container">
+      <h2 class="reveal">Informações Importantes</h2>
+      <div class="tips-grid">
+        <div class="tip reveal">
+          <h3>🚗 Estacionamento</h3>
+          <p>O local possui estacionamento próprio disponível para todos os convidados.</p>
+        </div>
+        <div class="tip reveal">
+          <h3>👔 Traje</h3>
+          <p>Esporte Fino. Vista-se com elegância para celebrar conosco.</p>
+        </div>
+        <div class="tip reveal">
+          <h3>⏰ Chegada</h3>
+          <p>Chegue com pelo menos 30 minutos de antecedência para garantir seu lugar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="back-home"><a href="index.html">← Voltar para o Início</a></div>
+
+  <button id="topButton" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
