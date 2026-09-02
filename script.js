@@ -183,31 +183,59 @@ if (heroSec && heroBg && window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
-// ── MUSIC BUTTON ───────────────────────────────────────────────
+// ── REPRODUTOR DE MÚSICA COM MEMÓRIA ENTRE PÁGINAS ────────────────
 const musicBtn  = document.getElementById('musicBtn');
 const bgMusic   = document.getElementById('bgMusic');
+const musicHint = document.getElementById('musicHint');
+
 if (musicBtn && bgMusic) {
   let isPlaying = false;
   const iconOff = `<svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>`;
-  const iconOn  = `<div class="music-wave"><span></span><span></span><span></span></div>`;
+  const iconOn  = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
 
+  // 1. Salva a posição da música a cada atualização de tempo
+  bgMusic.addEventListener('timeupdate', () => {
+    sessionStorage.setItem('weddingMusic_time', bgMusic.currentTime);
+  });
+
+  // 2. Se a música já estava tocando na página anterior, continua automaticamente
+  const savedState = sessionStorage.getItem('weddingMusic_playing');
+  const savedTime  = parseFloat(sessionStorage.getItem('weddingMusic_time') || '0');
+
+  if (savedState === 'true') {
+    bgMusic.currentTime = savedTime;
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicBtn.classList.add('playing');
+      musicBtn.innerHTML = iconOn;
+      musicBtn.setAttribute('title', 'Pausar música');
+      if (musicHint) musicHint.textContent = 'Tocando nossa música... 🎶';
+    }).catch(() => {
+      isPlaying = false;
+    });
+  }
+
+  // 3. Ao clicar no botão de tocar/pausar
   musicBtn.addEventListener('click', async () => {
     try {
       if (!isPlaying) {
         await bgMusic.play();
         isPlaying = true;
+        sessionStorage.setItem('weddingMusic_playing', 'true');
         musicBtn.classList.add('playing');
         musicBtn.innerHTML = iconOn;
         musicBtn.setAttribute('title', 'Pausar música');
+        if (musicHint) musicHint.textContent = 'Tocando nossa música... 🎶';
       } else {
         bgMusic.pause();
         isPlaying = false;
+        sessionStorage.setItem('weddingMusic_playing', 'false');
         musicBtn.classList.remove('playing');
         musicBtn.innerHTML = iconOff;
         musicBtn.setAttribute('title', 'Tocar música ambiente');
+        if (musicHint) musicHint.textContent = '🎵 Clique para ouvir nossa música 💕';
       }
     } catch (err) {
-      // Audio file not found — add assets/musica.mp3 to enable
       console.info('Música: adicione "assets/musica.mp3" para ativar o botão de música.');
     }
   });

@@ -11,6 +11,17 @@
 </head>
 <body>
 
+  <!-- MÚSICA DE FUNDO COM BALÃO DE DICA -->
+  <div class="music-player-container">
+    <button id="musicBtn" aria-label="Tocar música dos noivos" title="Tocar música ambiente">
+      <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+    </button>
+    <div class="music-hint" id="musicHint">🎵 Clique para ouvir nossa música 💕</div>
+    <audio id="bgMusic" loop>
+      <source src="assets/musica.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-container">

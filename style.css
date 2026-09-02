@@ -292,7 +292,7 @@ body {
   100% { transform:translateY(100vh) rotate(720deg); opacity:0; }
 }
 
-.hero-content { position:relative; z-index:1; width:92%; max-width:700px; }
+.hero-content { position:relative; z-index:1; width:92%; max-width:920px; }
 
 /* Painel de vidro fosco atrás da data, nomes e versículo */
 .hero-text-card {
@@ -323,7 +323,7 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(60px, 10vw, 110px);
+  font-size: clamp(46px, 7.5vw, 94px);
   font-weight: normal;
   line-height: 1;
   color: var(--text);
@@ -658,6 +658,82 @@ body {
 #topButton:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(201,132,158,.45); }
 #topButton svg { width:22px; height:22px; fill:white; }
 
+/* ──────────────── MUSIC PLAYER & TOOLTIP ──────────────── */
+.music-player-container {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+/* Balãozinho flutuante com dica ao lado direito do botão */
+.music-hint {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--blush-lt);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  box-shadow: 0 4px 18px rgba(90, 60, 60, 0.12);
+  pointer-events: none;
+  animation: hintFloat 3s ease-in-out infinite;
+  white-space: nowrap;
+  transition: opacity .3s, transform .3s;
+}
+
+@keyframes hintFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Botão circular de música */
+#musicBtn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--blush-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(201, 132, 158, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, border-color 0.3s;
+}
+
+#musicBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(201, 132, 158, 0.40);
+}
+
+#musicBtn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--blush);
+  transition: fill .3s;
+}
+
+#musicBtn.playing {
+  background: var(--blush);
+  border-color: var(--blush);
+  box-shadow: 0 0 0 4px rgba(201, 132, 158, 0.25);
+}
+
+#musicBtn.playing svg {
+  fill: white;
+}
+
+
 /* ──────────────── SUBPAGES ──────────────── */
 .hero-small {
   padding: 160px 0 80px;
@@ -930,31 +1006,6 @@ body::before {
 .hero, section, footer, nav { position: relative; z-index: 1; }
 
 
-
-/* ──────────────── MUSIC BUTTON ──────────────── */
-#musicBtn {
-  position: fixed;
-  left: 30px;
-  bottom: 30px;
-  width: 48px;
-  height: 48px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  border: 1px solid var(--glass-bd);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 900;
-  box-shadow: var(--shadow-m);
-  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
-}
-#musicBtn:hover { transform: scale(1.12); box-shadow: var(--shadow-l); }
-#musicBtn svg  { width:22px; height:22px; fill:var(--blush); transition: fill .3s; }
-#musicBtn.playing { background: var(--blush); border-color: var(--blush); }
-#musicBtn.playing svg { fill: white; }
 
 .music-wave {
   display: flex;
@@ -1280,7 +1331,7 @@ body::before {
 
 /* ──────────────── RESPONSIVE (additions) ──────────────── */
 @media(max-width: 900px) {
-  #musicBtn { left: 20px; bottom: 20px; }
+  .music-player-container { left: 16px; bottom: 16px; }
 }
 
 @media(prefers-reduced-motion:reduce){
