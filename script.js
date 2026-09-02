@@ -213,4 +213,18 @@ if (musicBtn && bgMusic) {
   });
 }
 
+// ── HERO SLIDESHOW ────────────────────────────────────────────────
+(function () {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (!slides.length) return;
 
+  let current = 0;
+
+  function nextSlide() {
+    slides[current].classList.remove('active'); // some a foto atual
+    current = (current + 1) % slides.length;   // avança para a próxima
+    slides[current].classList.add('active');    // aparece a próxima
+  }
+
+  setInterval(nextSlide, 5000); // troca a cada 5 segundos
+})();

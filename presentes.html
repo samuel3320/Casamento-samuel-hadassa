@@ -18,7 +18,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="local.html">Local</a></li>
-        <li><a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="nav-cta">Confirmar Presença</a></li>
+        <li><a href="rsvp.html" class="nav-cta">Confirmar Presença</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
     </div>
@@ -27,7 +27,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="closeMobile()">Início</a>
     <a href="local.html">Local</a>
-    <a href="https://noivos.casar.com/samuel-e-hadassa/#/rsvp" target="_blank" class="mobile-cta">Confirmar Presença</a>
+    <a href="rsvp.html" class="mobile-cta">Confirmar Presença</a>
   </div>
 
   <header class="hero-small">
@@ -43,28 +43,433 @@
       <div class="gift-grid">
 
         <div class="gift-card reveal">
-          <img src="assets/presentes/jogo-jantar.jpg" alt="Jogo de Jantar">
-          <h2>Jogo de Jantar</h2>
+          <img src="assets/presentes/livre.png" alt="livre">
+          <h2>Presenteie o valor que puder ❤️😊</h2>
+          <h3>R$ 00,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Presenteie o valor que puder ❤️😊','R$ 00,00','assets/qrcodes/livreqr.png','00020126640014br.gov.bcb.pix0114+55839913100700224Presenteie quando puder 5204000053039865802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr24597033407769063047033')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitenxoval.png" alt="Kit Enxoval">
+          <h2>Kit Enxoval</h2>
           <h3>R$ 250,00</h3>
-          <button class="gift-btn" onclick="abrirModal('Jogo de Jantar','R$ 250,00','assets/qrcodes/jogo-jantar.png','00020101021226...')">
+          <button class="gift-btn" onclick="abrirModal('Kit Enxoval','R$ 250,00','assets/qrcodes/kitenxoval.png','00020101021226...')">
             Presentear
           </button>
         </div>
 
         <div class="gift-card reveal">
-          <img src="assets/presentes/cafeteira.jpg" alt="Cafeteira">
-          <h2>Cafeteira</h2>
-          <h3>R$ 320,00</h3>
-          <button class="gift-btn" onclick="abrirModal('Cafeteira','R$ 320,00','assets/qrcodes/cafeteira.png','00020101021226...')">
+          <img src="assets/presentes/toalha.png" alt="Toalhas">
+          <h2>Toalhas</h2>
+          <h3>R$ 60,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Toalhas','R$ 60,00','assets/qrcodes/toalha.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitbanheiro.png" alt="Kit Banheiro">
+          <h2>Kit Banheiro</h2>
+          <h3>R$ 40,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit Banheiro','R$ 40,00','assets/qrcodes/kitbanheiro.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitlencol.png" alt="Kit Lençol">
+          <h2>Kit Lençol</h2>
+          <h3>R$ 75,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit Lençol','R$ 75,00','assets/qrcodes/kitlencol.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/travesseiro.png" alt="Travesseiro">
+          <h2>Travesseiros</h2>
+          <h3>R$ 40,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Travesseiros','R$ 40,00','assets/qrcodes/travesseiro.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/cama.png" alt="Cama">
+          <h2>Cama Box King</h2>
+          <h3>R$ 2349</h3>
+          <button class="gift-btn" onclick="abrirModal('Cama','R$ 2349,00','assets/qrcodes/cama.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/mesa.png" alt="Mesa">
+          <h2>Mesa</h2>
+          <h3>R$ 999,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Mesa','R$ 999,00','assets/qrcodes/mesa.png','00020101021226...')">
             Presentear
           </button>
         </div>
 
         <div class="gift-card reveal">
-          <img src="assets/presentes/microondas.jpg" alt="Micro-ondas">
+          <img src="assets/presentes/sofa.png" alt="Sofá">
+          <h2>Sofá</h2>
+          <h3>R$ 1879,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Sofá','R$ 1879,00','assets/qrcodes/sofa.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>        
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/guardaroupa.png" alt="Guarda-Roupa">
+          <h2>Guarda-Roupa</h2>
+          <h3>R$ 1132,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Guarda-Roupa','R$ 1132,00','assets/qrcodes/guardaroupa.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/rack.png" alt="Rack">
+          <h2>Rack</h2>
+          <h3>R$ 599,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Rack','R$ 599,00','assets/qrcodes/rack.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>        
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/armario.png" alt="Armário">
+          <h2>Armário</h2>
+          <h3>R$ 1381,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Armário','R$ 1381,00','assets/qrcodes/armario.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/fogao.png" alt="Fogão">
+          <h2>Fogão</h2>
+          <h3>R$ 919,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Fogão','R$ 919,00','assets/qrcodes/fogao.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/geladeira.png" alt="Geladeira">
+          <h2>Geladeira</h2>
+          <h3>R$ 4158,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Geladeira','R$ 4158,00','assets/qrcodes/geladeira.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/lavaeseca.png" alt="Lava-Eseca">
+          <h2>Lava-E-seca</h2>
+          <h3>R$ 2999,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Lava-E-seca','R$ 2999,00','assets/qrcodes/lavaeseca.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/lavalouca.png" alt="Lava Louça">
+          <h2>Lava Louça</h2>
+          <h3>R$ 2099,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Lava Louça','R$ 2099,00','assets/qrcodes/lavalouca.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/multiprocessador.png" alt="Multiprocessador">
+          <h2>Multiprocessador</h2>
+          <h3>R$ 377,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Multiprocessador','R$ 377,00','assets/qrcodes/multiprocessador.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/forno.png" alt="Forno">
+          <h2>Forno</h2>
+          <h3>R$ 752,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Forno','R$ 752,00','assets/qrcodes/forno.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/cooktop.png" alt="Cooktop">
+          <h2>Cooktop</h2>
+          <h3>R$ 989,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Cooktop','R$ 989,00','assets/qrcodes/cooktop.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+        
+        <div class="gift-card reveal">
+          <img src="assets/presentes/sanduicheira.png" alt="Sanduicheira">
+          <h2>Sanduicheira</h2>
+          <h3>R$ 140,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Sanduicheira','R$ 140,00','assets/qrcodes/sanduicheira.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/tv.png" alt="TV">
+          <h2>TV</h2>
+          <h3>R$ 2039,00</h3>
+          <button class="gift-btn" onclick="abrirModal('TV','R$ 2039,00','assets/qrcodes/tv.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/purificador.png" alt="Purificador de Água">
+          <h2>Purificador de Água</h2>
+          <h3>R$ 780,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Purificador de Água','R$ 780,00','assets/qrcodes/purificador.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/roboaspirador.png" alt="Robô Aspirador">
+          <h2>Robô Aspirador</h2>
+          <h3>R$ 358,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Robô Aspirador','R$ 358,00','assets/qrcodes/roboaspirador.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/microondas.png" alt="Micro-ondas">
           <h2>Micro-ondas</h2>
-          <h3>R$ 550,00</h3>
-          <button class="gift-btn" onclick="abrirModal('Micro-ondas','R$ 550,00','assets/qrcodes/microondas.png','00020101021226...')">
+          <h3>R$ 689,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Micro-ondas','R$ 689,00','assets/qrcodes/microondas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/airfryer.png" alt="Air Fryer">
+          <h2>Air Fryer</h2>
+          <h3>R$ 499,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Air Fryer','R$ 499,00','assets/qrcodes/airfryer.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitpanelas.png" alt="Kit de Panelas">
+          <h2>Kit de Panelas</h2>
+          <h3>R$ 319,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit de Panelas','R$ 319,00','assets/qrcodes/kitpanelas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/facas.png" alt="Conjunto de Facas">
+          <h2>Conjunto de Facas</h2>
+          <h3>R$ 199,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Conjunto de Facas','R$ 199,00','assets/qrcodes/facas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/tabuas.png" alt="Tabuas de Corte">
+          <h2>Tabuas de Corte</h2>
+          <h3>R$ 128,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Tabuas de Corte','R$ 128,00','assets/qrcodes/tabuas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/potes1.png" alt="Potes de Armazenamento">
+          <h2>Potes de Armazenamento</h2>
+          <h3>R$ 160,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Potes de Armazenamento','R$ 160,00','assets/qrcodes/potes1.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/potes2.png" alt="Potes de Armazenamento">
+          <h2>Potes de Armazenamento</h2>
+          <h3>R$ 143,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Potes de Armazenamento','R$ 143,00','assets/qrcodes/potes2.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitescorredor.png" alt="Kit de Escorredor">
+          <h2>Kit de Escorredor</h2>
+          <h3>R$ 60,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit de Escorredor','R$ 60,00','assets/qrcodes/kitescorredor.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitutensilioscozinha.png" alt="Kit de Utensílios de Cozinha">
+          <h2>Kit de Utensílios de Cozinha</h2>
+          <h3>R$ 96,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit de Utensílios de Cozinha','R$ 96,00','assets/qrcodes/kitutensilioscozinha.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/jogojantar.png" alt="Jogo de Jantar">
+          <h2>Jogo de Jantar</h2>
+          <h3>R$ 521,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Jogo de Jantar','R$ 521,00','assets/qrcodes/jogo-jantar.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitcopo.png" alt="Kit de Copos">
+          <h2>Kit de 12 Copos</h2>
+          <h3>R$ 65,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit de Copos','R$ 65,00','assets/qrcodes/kitcopo.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/talherdourado.png" alt="Kit Talheres">
+          <h2>Kit Talheres</h2>
+          <h3>R$ 45,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit Talheres','R$ 45,00','assets/qrcodes/talherdourado.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/talhernormal.png" alt="Kit Talheres 2">
+          <h2>Kit Talheres 2</h2>
+          <h3>R$ 30,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit Talheres 2','R$ 30,00','assets/qrcodes/talhernormal.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitformas.png" alt="Kit de Formas">
+          <h2>Kit de Formas</h2>
+          <h3>R$ 35,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit de Formas','R$ 35,00','assets/qrcodes/kitformas.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/kitutensilioscozinhasilicone.png" alt="Kit Utensílios de Cozinha Silicone">
+          <h2>Kit Utensílios de Cozinha Silicone</h2>
+          <h3>R$ 38,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Kit Utensílios de Cozinha Silicone','R$ 38,00','assets/qrcodes/kitutensilioscozinhasilicone.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/abridordelatafrufru.png" alt="Abridor de Lata Frufru">
+          <h2>Abridor de Lata Frufru</h2>
+          <h3>R$ 26,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Abridor de Lata Frufru','R$ 26,00','assets/qrcodes/abridordelatafrufru.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/abridordelataraiz.png" alt="Abridor de Lata Raiz">
+          <h2>Abridor de Lata Raiz</h2>
+          <h3>R$ 16,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Abridor de Lata Raiz','R$ 16,00','assets/qrcodes/abridordelataraiz.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/panodeprato.png" alt="Pano de Prato">
+          <h2>Pano de Prato</h2>
+          <h3>R$ 58,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Pano de Prato','R$ 58,00','assets/qrcodes/panodeprato.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/bowls.png" alt="Bowls">
+          <h2>Bowls</h2>
+          <h3>R$ 53,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Bowls','R$ 53,00','assets/qrcodes/bowls.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/acucareiro.png" alt="Açucareiro">
+          <h2>Açucareiro</h2>
+          <h3>R$ 35,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Açucareiro','R$ 35,00','assets/qrcodes/acucareiro.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/travessas.png" alt="Travessas">
+          <h2>Tramontina</h2>
+          <h3>R$ 150,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Tramontina','R$ 150,00','assets/qrcodes/tramontina.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/marinex.png" alt="Marinex">
+          <h2>Marinex</h2>
+          <h3>R$ 77,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Marinex','R$ 77,00','assets/qrcodes/marinex.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/vassouras.png" alt="Vassouras">
+          <h2>Vassouras</h2>
+          <h3>R$ 78,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Vassouras','R$ 78,00','assets/qrcodes/vassouras.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/raladores.png" alt="Raladores">
+          <h2>Raladores</h2>
+          <h3>R$ 35,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Raladores','R$ 35,00','assets/qrcodes/raladores.png','00020101021226...')">
+            Presentear
+          </button>
+        </div>
+
+        <div class="gift-card reveal">
+          <img src="assets/presentes/espremedores.png" alt="Espremedores">
+          <h2>Espremedores</h2>
+          <h3>R$ 42,00</h3>
+          <button class="gift-btn" onclick="abrirModal('Espremedores','R$ 42,00','assets/qrcodes/espremedores.png','00020101021226...')">
             Presentear
           </button>
         </div>
@@ -72,7 +477,7 @@
 
         <div class="gift-card reveal">
           <img src="assets/presentes/barbie.png" alt="Barbie">
-          <h2>Barbie</h2>
+          <h2>Barbie teste</h2>
           <h3>R$ 700,00</h3>
           <button class="gift-btn" onclick="abrirModal('Barbie','R$ 700,00','assets/qrcodes/barbieqr.png','00020126460014br.gov.bcb.pix0114+55839913100700206Barbie5204000053039865406700.005802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr2459703345609756304D675')">
             Presentear
@@ -81,9 +486,9 @@
 
         <div class="gift-card reveal">
           <img src="assets/presentes/livre.png" alt="livre">
-          <h2>Presenteie o quanto puder ❤️😊</h2>
+          <h2>Presenteie o valor que puder ❤️😊</h2>
           <h3>R$ 00,00</h3>
-          <button class="gift-btn" onclick="abrirModal('Presenteie o quanto puder ❤️😊','R$ 00,00','assets/qrcodes/livreqr.png','00020126640014br.gov.bcb.pix0114+55839913100700224Presenteie quando puder 5204000053039865802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr24597033407769063047033')">
+          <button class="gift-btn" onclick="abrirModal('Presenteie o valor que puder ❤️😊','R$ 00,00','assets/qrcodes/livreqr.png','00020126640014br.gov.bcb.pix0114+55839913100700224Presenteie quando puder 5204000053039865802BR5924Samuel Pereira De Souza 6009Sao Paulo62230519daqr24597033407769063047033')">
             Presentear
           </button>
         </div>

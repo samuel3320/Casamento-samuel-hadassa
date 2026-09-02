@@ -234,6 +234,49 @@ body {
   overflow: hidden;
 }
 
+/* ── HERO SLIDESHOW ────────────────────────────── */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Cada slide é uma foto de fundo cobrindo 100% da área */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  transform: scale(1.04); /* leve zoom para cobrir bordas durante a transição */
+}
+
+/* A foto ativa fica visível */
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Véu gradiente por cima das fotos — mantém os textos legíveis */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 247, 244, 0.58) 0%,
+    rgba(250, 247, 244, 0.38) 45%,
+    rgba(250, 247, 244, 0.58) 100%
+  );
+}
+
+/* Pétalas ficam acima do overlay */
+.hero-bg .hero-petals {
+  position: relative;
+  z-index: 2;
+}
+
+
 /* Falling petals */
 .petal {
   position: absolute;
@@ -250,6 +293,23 @@ body {
 }
 
 .hero-content { position:relative; z-index:1; width:92%; max-width:700px; }
+
+/* Painel de vidro fosco atrás da data, nomes e versículo */
+.hero-text-card {
+  background: rgba(250, 247, 244, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  border-radius: 28px;
+  padding: 44px 48px 36px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 40px rgba(90, 60, 60, 0.10);
+}
+
+/* Remove a margem inferior do hero-ref dentro do card */
+.hero-text-card .hero-ref {
+  margin-bottom: 0;
+}
 
 .hero-eyebrow {
   font-family: var(--font-sans);
